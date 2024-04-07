@@ -1,0 +1,37 @@
+"""
+URL configuration for office_emp_proj project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+"""from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+   path('',views.index, name='index'),
+   path('admin/', admin.site.urls),
+]"""
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # Define your app-specific URLs here
+    path('', views.index, name='index'),  # Example URL
+    path('view_emp', views.view_emp, name='view_emp'),
+    path('add_emp', views.add_emp, name='add_emp'),
+    path('rem_emp', views.rem_emp, name='rem_emp'),
+    path('rem_emp/<int:emp_id>', views.rem_emp, name='rem_emp'),
+    path('filt_emp', views.filt_emp, name='filt_emp'),
+]
+
